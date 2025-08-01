@@ -8,4 +8,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/submitbugreport', [BugController::class, 'createBugReport']);
+Route::post('/submitbugreport', [BugController::class, 'storeBugReport']);

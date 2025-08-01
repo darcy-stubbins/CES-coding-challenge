@@ -1,8 +1,10 @@
 import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
 
-export default function Welcome() {
+export default function BugReportForm(props: { validationError: String; }) {
     const { auth } = usePage<SharedData>().props;
+    let validationError = props.validationError;
+
 
     return (
         <>
@@ -17,10 +19,10 @@ export default function Welcome() {
                     <div className="font-bold text-xl mb-2 text-gray-700">Bug Report</div>
 
                     <div className="px-6 pt-4 pb-2">
-                        <form method="POST" action='/submitbugreport'>
+                        <form method="POST" action='/submitbugreport' id='bugReportForm'>
                             {/* title */}
                             <label className='text-gray-700 mr-1 ml-5'>Title:</label>
-                            <input className='border rounded text-black' type='text' name="title" placeholder='required' required />
+                            <input className='border rounded text-black' type='text' name="title" placeholder='required' />
 
                             {/* description */}
                             <label className='text-gray-700 mr-1 ml-5 '>Description:</label>
@@ -33,6 +35,8 @@ export default function Welcome() {
                                 <option value="medium">Medium</option>
                                 <option value="high">High</option>
                             </select>
+
+                            <p className='text-red-700' id='validationError'>{validationError}</p>
 
                             {/* submit button */}
                             <button className="border rounded bg-gray-700 mx-10 p-1" type='submit'>Submit Bug Report</button>

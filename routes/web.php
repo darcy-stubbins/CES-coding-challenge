@@ -4,10 +4,6 @@ use App\Http\Controllers\BugController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('bugReportForm');
-});
-
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard');
@@ -17,6 +13,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::get('/confirmation', function () {
     return Inertia::render('submitConfirmation');
 });
+
+Route::get('/', [BugController::class, 'createBugReport']);
 
 
 require __DIR__ . '/settings.php';
