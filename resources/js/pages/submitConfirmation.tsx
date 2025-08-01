@@ -17,7 +17,7 @@ export default function Welcome() {
                     <div className="font-bold text-xl mb-2 text-gray-700">Bug Report</div>
 
                     <div className="px-6 pt-4 pb-2">
-                        <p className='text-gray-700 mb-3'>Bug Report Submitted Successfully!</p>
+                        <p id='successMessage' className='text-gray-700 mb-3'>Bug Report Submitted Successfully!</p>
                         <a href='/' className='border rounded bg-gray-700 p-1'>Report Another Bug</a>
                     </div>
                 </div>
