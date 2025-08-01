@@ -18,6 +18,4 @@ npx cypress open
 
 2. Then select E2E Testing and select Chrome
 
-3. In the Specs section click the file spec.cy.ts and this will run the tests.
-
-## Notes:
+3. In the Specs section click the file _spec.cy.ts_ and this will run the tests.
